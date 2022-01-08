@@ -19,3 +19,226 @@ body {
     overflow: hidden;
 }
 /* ---- ---- GENERAL ---- ---- */
+/* ---- ---- HEADER ---- ---- */
+
+header {
+    background: #262626;
+    background-repeat: no-repeat; 
+    background-position: center;
+    max-height: 600px;
+}
+
+header .menu {
+    margin: 40px 0;
+    text-align: right;
+}
+
+header .menu a {
+    display: inline-block;
+    margin: 0 20px;
+    color: #F2F2F2;
+    padding-bottom: 9px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+}
+
+header .menu a:hover {
+    border-bottom: 2px solid #F2F2F2;
+}
+
+header .text-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 190px;
+}
+
+header .text-container .text {
+    border: 2px solid rgba(242, 242, 242, 0.5);
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 60px;
+}
+
+header .text-container .text h1 {
+    color: #F2F2F2;
+    font-weight: 300;
+    margin: 0;
+}
+
+header .text-container .text .name {
+    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+/* ---- ---- HEADER ---- ---- */
+
+/* ---- ---- MAIN ---- ---- */
+
+.main .about {
+    text-align: center;
+}
+
+.main .about .text {
+    color: #262626;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 30px;
+    width: 80%;
+    margin: 40px auto 60px auto;
+}
+
+.main .about .text .bold{
+    color: #8C8A87;
+    text-decoration: underline;
+}
+
+.main .projects {
+    background-color: #EEEEEE;
+    padding: 60px 0;
+}
+
+.main .projects .container {
+    overflow: hidden;
+}
+
+.main .projects .title {
+    color: #732929;
+}
+
+.main .projects .projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .projects .projects-container .project {
+    width: 30%;
+    margin-bottom: 40px;
+}
+
+.main .projects .projects-container .project:hover {
+    cursor: pointer;
+}
+
+.main .projects .projects-container .project .thumb {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main .projects .projects-container .project .thumb img{
+    width: 100%;
+    vertical-align: top;
+    border-radius: 3px;
+}
+
+.main .projects .projects-container .project .description {
+    text-align: center;
+}
+
+.main .projects .projects-container .project .name {
+    font-weight: 700;
+    color: #262626;
+    margin-bottom: 10px;
+}
+
+.main .projects .projects-container .project .category {
+    font-size: 14px;
+    color: #8C8A87;
+}
+
+/* ---- ---- MAIN ---- ---- */
+
+/* ---- ---- FOOTER ---- ---- */
+
+footer .contact {
+    padding: 60px 0;
+}
+
+footer .contact .title {
+    color: #F24141;
+}
+
+footer .contact .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .contact .contact-form input[type="text"],
+footer .contact .contact-form input[type="email"],
+footer .contact .contact-form textarea {
+    border: 2px solid #262626;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #8C8A87;
+    outline: none;
+}
+
+footer .contact .contact-form input[type="text"]:focus,
+footer .contact .contact-form input[type="email"]:focus,
+footer .contact .contact-form textarea:focus {
+    border: 2px solid #732929;
+}
+
+footer .contact .contact-form input[type="text"],
+footer .contact .contact-form input[type="email"] {
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+footer .contact .contact-form textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    margin-bottom: 15px;
+}
+
+footer .contact .contact-form .button {
+    margin: auto;
+    background: #732929;
+    color: #F2F2F2;
+    border: none;
+    border-radius: 3px;
+    padding: 15px 40px;
+    cursor: pointer;
+}
+
+footer .contact .contact-form .button:hover {
+    background: #F24141;
+}
+
+footer .social-networks {
+    background: #262626;
+    padding: 60px 0;
+}
+
+footer .social-networks .container {
+    display: flex;
+    justify-content: center;
+}
+
+footer .social-networks a {
+    color: #F2F2F2;
+    text-align: center;
+    width: 100px;
+    display: block;
+    padding: 15px 0;
+    border-radius: 3px;
+    font-size: 30px;
+    margin: 0 20px;
+}
+
+footer .social-networks .discord:hover {background: #7289da;}
+
+footer .social-networks .github:hover {background: #4078c0;}
+
+footer .social-networks .instagram:hover {background: #405de6;}
+
+/* ---- ---- FOOTER ---- ---- */
