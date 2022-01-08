@@ -11,18 +11,29 @@ body {
     font-size: 16px;
 }
 
-
 .container {
     width: 90%;
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
 }
+
+.main .about .text .title,
+.main .projects .title,
+footer .contact .title {
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #D93030;
+    text-align: center;
+}
+
 /* ---- ---- GENERAL ---- ---- */
 /* ---- ---- HEADER ---- ---- */
 
 header {
-    background: url('') #262626;
+    background: url('') #723FA6;
     background-repeat: no-repeat; 
     background-position: center;
     max-height: 600px;
@@ -44,7 +55,7 @@ header .menu a {
 }
 
 header .menu a:hover {
-    border-bottom: 2px solid #F2F2F2;
+    border-bottom: 2px solid #65728C;
 }
 
 header .text-container {
@@ -95,11 +106,11 @@ header .text-container .text .name {
 .main .about .picture img{
     /* vertical-align: top; */
     border-radius: 15%;
-    border: 5px solid rgba(242, 242, 242, 0.5);
+    border: 5px solid rgba(176, 217, 209, 0.5);
 }
 
 .main .about .text {
-    color: #262626;
+    color: #723FA6;
     font-weight: 600;
     font-size: 1em;
     line-height: 30px;
@@ -108,7 +119,7 @@ header .text-container .text .name {
 }
 
 .main .about .text .bold{
-    color: #8C8A87;
+    color: #65728C;
     text-decoration: underline;
 }
 
@@ -122,7 +133,7 @@ header .text-container .text .name {
 }
 
 .main .projects .title {
-    color: #732929;
+    color: #65728C;
 }
 
 .main .projects .projects-container {
@@ -158,13 +169,13 @@ header .text-container .text .name {
 
 .main .projects .projects-container .project .name {
     font-weight: 700;
-    color: #262626;
+    color: #723FA6;
     margin-bottom: 10px;
 }
 
 .main .projects .projects-container .project .category {
     font-size: 14px;
-    color: #8C8A87;
+    color: #65728C;
 }
 
 /* ---- ---- MAIN ---- ---- */
@@ -176,7 +187,7 @@ footer .contact {
 }
 
 footer .contact .title {
-    color: #F24141;
+    color: #D93030;
 }
 
 footer .contact .contact-form {
@@ -188,18 +199,18 @@ footer .contact .contact-form {
 footer .contact .contact-form input[type="text"],
 footer .contact .contact-form input[type="email"],
 footer .contact .contact-form textarea {
-    border: 2px solid #262626;
+    border: 2px solid #723FA6;
     border-radius: 5px;
     padding: 15px 20px;
     font-size: 20px;
-    color: #8C8A87;
+    color: #65728C;
     outline: none;
 }
 
 footer .contact .contact-form input[type="text"]:focus,
 footer .contact .contact-form input[type="email"]:focus,
 footer .contact .contact-form textarea:focus {
-    border: 2px solid #732929;
+    border: 2px solid #65728C;
 }
 
 footer .contact .contact-form input[type="text"],
@@ -218,8 +229,8 @@ footer .contact .contact-form textarea {
 
 footer .contact .contact-form .button {
     margin: auto;
-    background: #732929;
-    color: #F2F2F2;
+    background: #65728C;
+    color: #B0D9D1;
     border: none;
     border-radius: 3px;
     padding: 15px 40px;
@@ -227,11 +238,11 @@ footer .contact .contact-form .button {
 }
 
 footer .contact .contact-form .button:hover {
-    background: #F24141;
+    background: #723FA6;
 }
 
 footer .social-networks {
-    background: #262626;
+    background: #723FA6;
     padding: 60px 0;
 }
 
