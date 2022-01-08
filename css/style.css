@@ -178,6 +178,30 @@ header .text-container .text .name {
     color: #65728C;
 }
 
+.main .roulette .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.main .roulette .showRoulette {
+    text-align: center;
+    width: 200px;
+    background: #65728C;
+    border: none;
+    border-radius: 3px;
+}
+
+.main .roulette .showRoulette p{
+    font-weight:700;
+    color: #B0D9D1;
+    margin: 10px;    
+    font-size: 1em;
+    cursor: pointer;
+}
+
 /* ---- ---- MAIN ---- ---- */
 
 /* ---- ---- FOOTER ---- ---- */
