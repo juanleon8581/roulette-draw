@@ -202,6 +202,12 @@ header .text-container .text .name {
     cursor: pointer;
 }
 
+.main .roulette .roulette-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /* ---- ---- MAIN ---- ---- */
 
 /* ---- ---- FOOTER ---- ---- */
