@@ -92,8 +92,15 @@
                 </div>
 
                 <div class="roulette-container" id="roulette-container">
-                    <input type="button" value="spin" style="float:left;" id='spin' />
-                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <div class="canvas-container">
+                        <canvas id="canvas" width="1000" height="1000"></canvas>
+                    </div>
+                    <div class="draw-form">
+                        <div id="spin" class="spin">
+                            <p>Iniciar</p>
+                        </div>
+                        <textarea name="" id="optionsDraw" cols="30" rows="10" class="optionsDraw"></textarea>
+                    </div>
                 </div>
             </div>
         </section>
@@ -102,7 +109,7 @@
     <footer>
         <section class="contact" id="contact">
             <div class="container">
-                <h3 class="title">Contact</h3>
+                <h3 class="title">Contacto</h3>
                 <form action="" class="contact-form" id="contact-form">
                     <input type="text" placeholder="Name" name="name" required>
                     <input type="email" placeholder="E-Mail" name="email" required>

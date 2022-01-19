@@ -1,19 +1,42 @@
-var options = ["ardat dagon", "ardat dagon", "ardat dagon", "ardat dagon", "ardat dagon", "ardat dagon", "ardat dagon", "ardat dagon"];
+let options = ['Avacyn', 'Avavyn'];
+let showRoulette = document.querySelector('#showRoulette');
+let rouletteContainer = document.querySelector('#roulette-container');
+let drawOptions = document.querySelector('#optionsDraw');
 
-var startAngle = 0;
-var arc = Math.PI / (options.length / 2);
-var spinTimeout = null;
+let startAngle = 0;
+let arc = Math.PI / (options.length / 2);
+let spinTimeout = null;
 
-var spinArcStart = 10;
-var spinTime = 0;
-var spinTimeTotal = 0;
+let spinArcStart = 10;
+let spinTime = 0;
+let spinTimeTotal = 0;
 
-var ctx;
+let ctx;
+
+const reDraw = () => {
+  options = drawOptions.value.split('\n');
+  arc = Math.PI / (options.length / 2);
+  drawRouletteWheel();
+};
+
+const toggleRoulette = () => {
+    if(window.getComputedStyle(rouletteContainer).display === "none"){
+      showRoulette.firstElementChild.textContent = 'Ocultar Ruleta ↑';
+      rouletteContainer.style.display = 'flex';
+    }else {
+      showRoulette.firstElementChild.textContent = 'Mostrar Ruleta ↓';
+      rouletteContainer.style.display = 'none';
+    }
+};
+
+showRoulette.addEventListener('click',toggleRoulette);
+
+drawOptions.addEventListener('input',reDraw)
 
 document.getElementById("spin").addEventListener("click", spin);
 
 function byte2Hex(n) {
-  var nybHexString = "0123456789ABCDEF";
+  let nybHexString = "0123456789ABCDEF";
   return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
 }
 
@@ -22,10 +45,10 @@ function RGB2Color(r,g,b) {
 }
 
 function getColor(item, maxitem) {
-  var phase = 0;
-  var center = 128;
-  var width = 127;
-  var frequency = Math.PI*2/maxitem;
+  let phase = 0;
+  let center = 128;
+  let width = 127;
+  let frequency = Math.PI*2/maxitem;
   
   red   = Math.sin(frequency*item+2+phase) * width + center;
   green = Math.sin(frequency*item+0+phase) * width + center;
@@ -35,58 +58,56 @@ function getColor(item, maxitem) {
 }
 
 function drawRouletteWheel() {
-  var canvas = document.getElementById("canvas");
+  let canvas = document.getElementById("canvas");
   if (canvas.getContext) {
-    var outsideRadius = 200;
-    var textRadius = 160;
-    var insideRadius = 80;
+    let outsideRadius = 400;
+    let textRadius = 320;
+    let insideRadius = 160;
 
     ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,500,500);
 
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 2;
+    // ctx.lineWidth = 2;
 
-    ctx.font = 'bold 12px Helvetica, Arial';
+    ctx.font = 'bold 25px sans-serif, serif';
 
-    for(var i = 0; i < options.length; i++) {
-      var angle = startAngle + i * arc;
+    for(let i = 0; i < options.length; i++) {
+      let angle = startAngle + i * arc;
       //ctx.fillStyle = colors[i];
       ctx.fillStyle = getColor(i, options.length);
 
       ctx.beginPath();
-      ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
-      ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
+      ctx.arc(500, 500, outsideRadius, angle, angle + arc, false);
+      ctx.arc(500, 500, insideRadius, angle + arc, angle, true);
       ctx.stroke();
       ctx.fill();
 
       ctx.save();
-      ctx.shadowOffsetX = -1;
-      ctx.shadowOffsetY = -1;
-      ctx.shadowBlur    = 0;
-      ctx.shadowColor   = "rgb(220,220,220)";
-      ctx.fillStyle = "black";
-      ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius, 
-                    250 + Math.sin(angle + arc / 2) * textRadius);
+      
+      ctx.fillStyle = "#fff";
+      ctx.translate(500 + Math.cos(angle + arc / 2) * textRadius, 
+                    500 + Math.sin(angle + arc / 2) * textRadius);
       ctx.rotate(angle + arc / 2 + Math.PI / 2);
-      var text = options[i];
+      let text = options[i];
       ctx.translate(0, 20);
       ctx.rotate(-Math.PI / 2);
       ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+      ctx.strokeText(text, -ctx.measureText(text).width / 2, 0);
       ctx.restore();
     } 
 
     //Arrow
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.moveTo(250 - 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius + 5));
-    ctx.lineTo(250 + 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 + 0, 250 - (outsideRadius - 13));
-    ctx.lineTo(250 - 9, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius - 5));
-    ctx.lineTo(250 - 4, 250 - (outsideRadius + 5));
+    ctx.moveTo(500 - 8, 500 - (outsideRadius + 10));
+    ctx.lineTo(500 + 8, 500 - (outsideRadius + 10));
+    ctx.lineTo(500 + 8, 500 - (outsideRadius - 10));
+    ctx.lineTo(500 + 18, 500 - (outsideRadius - 10));
+    ctx.lineTo(500 + 0, 500 - (outsideRadius - 26));
+    ctx.lineTo(500 - 18, 500 - (outsideRadius - 10));
+    ctx.lineTo(500 - 8, 500 - (outsideRadius - 10));
+    ctx.lineTo(500 - 8, 500 - (outsideRadius + 10));
     ctx.fill();
   }
 }
@@ -104,7 +125,7 @@ function rotateWheel() {
     stopRotateWheel();
     return;
   }
-  var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+  let spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
   startAngle += (spinAngle * Math.PI / 180);
   drawRouletteWheel();
   spinTimeout = setTimeout('rotateWheel()', 30);
@@ -112,19 +133,19 @@ function rotateWheel() {
 
 function stopRotateWheel() {
   clearTimeout(spinTimeout);
-  var degrees = startAngle * 180 / Math.PI + 90;
-  var arcd = arc * 180 / Math.PI;
-  var index = Math.floor((360 - degrees % 360) / arcd);
+  let degrees = startAngle * 180 / Math.PI + 90;
+  let arcd = arc * 180 / Math.PI;
+  let index = Math.floor((360 - degrees % 360) / arcd);
   ctx.save();
-  ctx.font = 'bold 20px Helvetica, Arial';
-  var text = options[index]
-  ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
+  ctx.font = 'bold 45px sans-serif, serif';
+  let text = options[index]
+  ctx.fillText(text, 500 - ctx.measureText(text).width / 2, 500 + 10);
   ctx.restore();
 }
 
 function easeOut(t, b, c, d) {
-  var ts = (t/=d)*t;
-  var tc = ts*t;
+  let ts = (t/=d)*t;
+  let tc = ts*t;
   return b+c*(tc + -3*ts + 3*t);
 }
 

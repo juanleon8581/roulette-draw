@@ -178,7 +178,8 @@ header .text-container .text .name {
     color: #65728C;
 }
 
-.main .roulette .container {
+.main .roulette .container,
+.main .roulette .roulette-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,27 +187,73 @@ header .text-container .text .name {
     padding-top: 20px;
 }
 
-.main .roulette .showRoulette {
+.main .roulette .showRoulette,
+.main .roulette .roulette-container .draw-form .spin {
     text-align: center;
-    width: 200px;
+    width: 100%;
     background: #65728C;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 
-.main .roulette .showRoulette p{
+.main .roulette .showRoulette p,
+.main .roulette .roulette-container .draw-form .spin p {
     font-weight:700;
     color: #B0D9D1;
     margin: 10px;    
     font-size: 1em;
-    cursor: pointer;
 }
 
-.main .roulette .roulette-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.main .roulette .showRoulette:hover,
+.main .roulette .roulette-container .draw-form .spin:hover {
+    background: #723FA6;
 }
+
+.main .roulette .roulette-container {
+    width: 100%;
+    display: none;
+}
+
+.main .roulette .roulette-container .canvas-container {
+    width: 70%;
+}
+
+.main .roulette .roulette-container .canvas-container canvas{
+    width: 100%;
+    max-height: 700px;
+}
+
+.main .roulette .roulette-container .draw-form {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .roulette .roulette-container .draw-form .spin {
+    margin-bottom: 10px;
+}
+
+.main .roulette .roulette-container .draw-form .optionsDraw {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    max-height: 700px;
+    height: 100%;
+    resize: none;
+    overflow: visible;
+    border: 2px solid #723FA6;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+    color: #65728C;
+    outline: none;
+}
+
+.main .roulette .roulette-container .draw-form .optionsDraw:focus {
+    border: 2px solid #65728C;
+}
+
 
 /* ---- ---- MAIN ---- ---- */
 
